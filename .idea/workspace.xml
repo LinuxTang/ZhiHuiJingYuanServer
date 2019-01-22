@@ -9,9 +9,7 @@
     <bookmark url="file://$PROJECT_DIR$/src/pojo/Market.java" line="67" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9e7e5ea1-1825-4b85-a8d2-c95f469a979d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-    </list>
+    <list default="true" id="9e7e5ea1-1825-4b85-a8d2-c95f469a979d" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -278,7 +276,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548145121727" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548145932745" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="Arquillian JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Arquillian JUnit4" value="" />
     <property name="create.test.in.the.same.root" value="true" />
@@ -614,7 +612,7 @@
       <workItem from="1542970737746" duration="4253000" />
       <workItem from="1543038887842" duration="1439000" />
       <workItem from="1543066957127" duration="791000" />
-      <workItem from="1548143983126" duration="1033000" />
+      <workItem from="1548143983126" duration="1736000" />
     </task>
     <task id="LOCAL-00001" summary="上传智慧经院小程序后端代码">
       <created>1548144865631</created>
@@ -627,10 +625,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="57564000" />
+    <option name="totallyTimeSpent" value="58267000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49888143" visible="true" weight="0.21709532" />
