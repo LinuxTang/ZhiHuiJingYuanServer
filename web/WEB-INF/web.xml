@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
+         version="4.0">
+        <servlet>
+            <servlet-name>wxloginServlet</servlet-name>
+            <servlet-class>servlet.wxloginServlet</servlet-class>
+        </servlet>
+        <servlet-mapping>
+            <servlet-name>wxloginServlet</servlet-name>
+            <url-pattern>/wxloginServlet</url-pattern>
+        </servlet-mapping>
+
+
+        <servlet>
+            <servlet-name>wxRegisteredServlet</servlet-name>
+            <servlet-class>servlet.wxRegisteredServlet</servlet-class>
+        </servlet>
+        <servlet-mapping>
+            <servlet-name>wxRegisteredServlet</servlet-name>
+            <url-pattern>/wxRegisteredServlet</url-pattern>
+        </servlet-mapping>
+
+        <servlet>
+            <servlet-name>uploadphotoServlet</servlet-name>
+            <servlet-class>servlet.UploadPhotoServlet</servlet-class>
+        </servlet>
+        <servlet-mapping>
+            <servlet-name>uploadphotoServlet</servlet-name>
+            <url-pattern>/uploadPhotoServlet</url-pattern>
+        </servlet-mapping>
+
+    <servlet>
+        <servlet-name>publishProductServlet</servlet-name>
+        <servlet-class>servlet.publishProductServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>publishProductServlet</servlet-name>
+        <url-pattern>/publishProductServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>showMarketServlet</servlet-name>
+        <servlet-class>servlet.showMarketServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>showMarketServlet</servlet-name>
+        <url-pattern>/showMarketServlet</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>showProductServlet</servlet-name>
+        <servlet-class>servlet.showProductServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>showProductServlet</servlet-name>
+        <url-pattern>/showProductServlet</url-pattern>
+    </servlet-mapping>
+</web-app>
