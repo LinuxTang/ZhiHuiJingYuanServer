@@ -1,5 +1,10 @@
 package pojo;
 
+import org.apache.commons.beanutils.ConvertUtils;
+
+import java.lang.reflect.Field;
+import java.util.Map;
+
 public class Forder {
 
     private String foid;
@@ -50,5 +55,20 @@ public class Forder {
                 ", fodescribe='" + fodescribe + '\'' +
                 ", foimg='" + foimg + '\'' +
                 '}';
+    }
+
+    public void setParameters(Map<String,String> map){
+        Class clazz = this.getClass();
+        Field[] fields = clazz.getDeclaredFields();
+        for(Field field : fields){
+            String fieldName = field.getName();
+            if(map.containsKey(fieldName)){
+                try {
+                    field.set(this, ConvertUtils.convert(map.get(fieldName), field.getType()));
+                }catch (Exception e){
+                    e.printStackTrace();
+                }
+            }
+        }
     }
 }

@@ -48,4 +48,13 @@
         <servlet-name>showMarketServlet</servlet-name>
         <url-pattern>/showMarketServlet</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>showProductServlet</servlet-name>
+        <servlet-class>servlet.showProductServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>showProductServlet</servlet-name>
+        <url-pattern>/showProductServlet</url-pattern>
+    </servlet-mapping>
 </web-app>

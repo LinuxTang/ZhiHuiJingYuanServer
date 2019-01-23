@@ -18,7 +18,7 @@ public class MarketDao extends AbstractDao{
 //        PreparedStatement preStmt = null;
         String sql = "insert into market(mkid,mkpid,mkgid,mktime,mkprice,mkname,mktitle,mkimg) " +
                 "values(?,?,?,?,?,?,?,?)";
-        Object[] data = new Object[]{market.getMkId(),market.getMkPid(),market.getMkGid(),market.getMkTime(),market.getMkPrice(),market.getMkName(),market.getMkTitle(),market.getMkImg()};
+        Object[] data = new Object[]{market.getMkid(),market.getMkpid(),market.getMkgid(),market.getMktime(),market.getMkprice(),market.getMkname(),market.getMktitle(),market.getMkimg()};
         return super.update(sql,data);
         //        try{
 //            preStmt = conn.prepareStatement(sql);

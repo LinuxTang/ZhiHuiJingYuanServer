@@ -25,7 +25,7 @@ public class UploadFileImg {
         return uploadFileImg;
     }
 
-    public Map<String,String> UploadImg(HttpServletRequest request,String Path, String cusFileName) throws UnsupportedEncodingException {
+    public String UploadImg(HttpServletRequest request) throws UnsupportedEncodingException {
         request.setCharacterEncoding("UTF-8");
         //本地地址
         String rootPath = "G:/images";
@@ -33,9 +33,6 @@ public class UploadFileImg {
         String tempPath = request.getServletContext().getRealPath("/WEB-INF/temp");
 //        //判断是普通表单，还是带文件上传的表单。
 //        boolean isMultipart = ServletFileUpload.isMultipartContent(request);
-
-        //保存字段
-        Map<String,String> fieldsMap = new HashMap<String,String>();
 
         String uploadPathName = null;
 
@@ -75,6 +72,7 @@ public class UploadFileImg {
             upload.setHeaderEncoding("UFT-8");
             //3、判断提交上来的是否为表单的数据
             if(!ServletFileUpload.isMultipartContent(request)){
+                System.out.println("这是表单数据！！！");
                 return null;
             }
 
@@ -86,14 +84,14 @@ public class UploadFileImg {
             //4、使用servletFileUpload解析器解析上传数据，解析结果返回的是一个List<FileItem>集合，每个FileItem对应
             //一个Form表单的选项
             List<FileItem> list = upload.parseRequest(request);
+            String Path = null;
             for(FileItem item : list){
                 if(item.isFormField()){
-                    String name = item.getFieldName();
-                    //解决普通输入项的数据的中文乱码问题
-                    String value = item.getString("UTF-8");
-                    fieldsMap.put(name,value);
+                    Path = "market/" + item.getString("utf-8") + "/";
                 }
-                else{
+            }
+            for(FileItem item : list){
+                if(!item.isFormField()){
                     //如果fileitem中封装的是上传文件
                     //得到文件的名字
                     String filename = item.getName();
@@ -111,8 +109,7 @@ public class UploadFileImg {
                     //获取item中的上传文件的输入流
                     InputStream in = item.getInputStream();
                     //得到保存文件的名称
-                    String saveFileName = cusFileName + "." + fileExtName;
-                    fieldsMap.put("saveFileName",saveFileName);
+                    String saveFileName = makeName() + "." + fileExtName;
                     //得到文件的保存目录
                     String  realSavePath = makePath(rootPath ,Path);
                     System.out.println(realSavePath);
@@ -135,6 +132,7 @@ public class UploadFileImg {
                     item.delete();
                     //获得实际保存路径
                     uploadPathName = realSavePath + saveFileName;
+                    return Path + saveFileName;
                 }
             }
         } catch (FileUploadException e) {
@@ -144,7 +142,7 @@ public class UploadFileImg {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return fieldsMap;
+        return null;
     }
 
 //    private String makePath(String filename,String savePath){
@@ -174,6 +172,10 @@ public class UploadFileImg {
             file.mkdirs();
         }
         return dir;
+    }
+
+    private String makeName(){
+        return UUID.randomUUID().toString().replace("-","");
     }
 
 }
