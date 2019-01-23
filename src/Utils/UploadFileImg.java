@@ -28,7 +28,7 @@ public class UploadFileImg {
     public String UploadImg(HttpServletRequest request) throws UnsupportedEncodingException {
         request.setCharacterEncoding("UTF-8");
         //本地地址
-        String rootPath = "G:/images";
+        String rootPath = "D:/project/uploads";
         //临时保存文件地址
         String tempPath = request.getServletContext().getRealPath("/WEB-INF/temp");
 //        //判断是普通表单，还是带文件上传的表单。

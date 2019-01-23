@@ -57,4 +57,24 @@
         <servlet-name>showProductServlet</servlet-name>
         <url-pattern>/showProductServlet</url-pattern>
     </servlet-mapping>
+    <!--获取丢失和捡到物品-->
+    <servlet>
+        <servlet-name>wxLodingFindLostServlet</servlet-name>
+        <servlet-class>servlet.wxLodingFindLostServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>wxLodingFindLostServlet</servlet-name>
+        <url-pattern>/wxLodingFindLostServlet</url-pattern>
+    </servlet-mapping>
+
+    <!--丢失物品发布-->
+    <servlet>
+        <servlet-name>wxLostItemServlet</servlet-name>
+        <servlet-class>servlet.wxLostItemServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>wxLostItemServlet</servlet-name>
+        <url-pattern>/wxLostItemServlet</url-pattern>
+    </servlet-mapping>
+
 </web-app>
