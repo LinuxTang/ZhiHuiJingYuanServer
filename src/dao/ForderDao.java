@@ -23,7 +23,7 @@ public class ForderDao extends AbstractDao {
 
     //常规插入数据操作
     public Integer insertBasicForder(Forder forder){
-        int num = 3;
+        int num = 1;
         Integer success = null;
         String sql = "insert into `forder` (foid";
         List<Object> values = new ArrayList<Object>();
@@ -107,15 +107,12 @@ public class ForderDao extends AbstractDao {
             runSql = runSql + "where " + sql;
         }
         List<Forder> forderList = null;
-        Vector<Vector<Object>> lists = null;
+        Vector<Map<String,String>> lists = null;
         if((lists = super.select(runSql,null)) != null){
             for(int i = 0; i < lists.size(); i++){
                 Forder forder = new Forder();
-                Vector<Object> list = lists.get(i);
-                forder.setFoid(list.get(0).toString());
-                forder.setFoname(list.get(1).toString());
-                forder.setFodescribe(list.get(2).toString());
-                forder.setFoimg(list.get(3).toString());
+                Map<String,String> list = lists.get(i);
+                forder.setParameters(list);
                 forderList.add(forder);
             }
         }

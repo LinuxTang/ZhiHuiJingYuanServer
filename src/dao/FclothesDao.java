@@ -23,7 +23,7 @@ public class FclothesDao extends AbstractDao{
 
     //常规插入数据操作
     public Integer insertBasicFclothes(Fclothes fclothes){
-        int num = 3;
+        int num = 1;
         Integer success = null;
         String sql = "insert into `fclothes` (fcid";
         List<Object> values = new ArrayList<Object>();
@@ -36,6 +36,8 @@ public class FclothesDao extends AbstractDao{
         values.add(fclothes.getFcid());
         if(fclothes.getFcsex() != null){
             sql = sql + ",fcsex";
+            values.add(fclothes.getFcsex());
+            num++;
         }
         if(fclothes.getFcdescribe() != null) {
             sql = sql + ",fcdescribe";
@@ -110,16 +112,12 @@ public class FclothesDao extends AbstractDao{
             runSql = runSql + "where " + sql;
         }
         List<Fclothes> fclothesList = null;
-        Vector<Vector<Object>> lists = null;
+        Vector<Map<String,String>> lists = null;
         if((lists = super.select(runSql,null)) != null){
             for(int i = 0; i < lists.size(); i++){
                 Fclothes fclothes = new Fclothes();
-                Vector<Object> list = lists.get(i);
-                fclothes.setFcid(list.get(0).toString());
-                fclothes.setFccolor(list.get(1).toString());
-                fclothes.setFcsex(list.get(2).toString());
-                fclothes.setFcdescribe(list.get(3).toString());
-                fclothes.setFcimg(list.get(4).toString());
+                Map<String,String> list = lists.get(i);
+                fclothes.setParameters(list);
                 fclothesList.add(fclothes);
             }
         }
